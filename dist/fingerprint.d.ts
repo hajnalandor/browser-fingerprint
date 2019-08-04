@@ -5,7 +5,7 @@ export default class Fingerprint {
     private fingerprintId;
     private fp;
     constructor();
-    create(): FPInterface;
+    static create(): FPInterface;
     private generateFingerprint;
     private getCustomFingerPr;
     private buildfp;

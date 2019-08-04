@@ -4,7 +4,7 @@
   "description": "browser fingerprint based on fingerprint2js and clientjs",
   "main": "fingerprint.js",
   "scripts": {
-    "build": "tsc",
+    "build": "rm -r ./dist && mkdir ./dist && cd ./lib && webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,11 +18,15 @@
   },
   "homepage": "https://github.com/hajnalandor/browser-fingerprint#readme",
   "devDependencies": {
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "ts-loader": "^6.0.4",
+    "webpack": "^4.38.0",
+    "webpack-cli": "^3.3.6"
   },
   "dependencies": {
     "@types/clientjs": "^0.1.0",
     "@types/fingerprintjs2": "^2.0.0",
-    "fingerprintjs2": "^2.1.0"
+    "fingerprintjs2": "^2.1.0",
+    "uglifyjs-webpack-plugin": "^2.2.0"
   }
 }

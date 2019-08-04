@@ -151,9 +151,10 @@ export default class Fingerprint {
     this.fingerprintId = '';
   }
   
-  public create(): FPInterface {
-    this.generateFingerprint();
-    return this.fp;
+  public static create(): FPInterface {
+    let fingerprint = new Fingerprint();
+    fingerprint.generateFingerprint();
+    return fingerprint.fp;
   }
 
   private generateFingerprint(): void {
