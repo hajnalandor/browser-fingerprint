@@ -1,0 +1,28 @@
+{
+  "name": "browser-fingerprint",
+  "version": "0.0.1",
+  "description": "browser fingerprint",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hajnalandor/browser-fingerprint.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hajnalandor/browser-fingerprint/issues"
+  },
+  "homepage": "https://github.com/hajnalandor/browser-fingerprint#readme",
+  "devDependencies": {
+    "typescript": "^3.5.3"
+  },
+  "dependencies": {
+    "@types/clientjs": "^0.1.0",
+    "@types/fingerprintjs2": "^2.0.0",
+    "fingerprintjs2": "^2.1.0"
+  }
+}
