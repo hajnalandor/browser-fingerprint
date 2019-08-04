@@ -1,7 +1,7 @@
 {
-  "name": "browser-fingerprint",
+  "name": "@hajnalandor/browser-fingerprint",
   "version": "0.0.1",
-  "description": "browser fingerprint",
+  "description": "browser fingerprint based on fingerprint2js and clientjs",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
