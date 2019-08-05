@@ -7,7 +7,7 @@ Browser-fingerprint attempts to solve the problem of making client data more eas
 This library uses clientjs and fingerprintjs2
 ## 2 major fingerprint hash which has uniqueness more than 95% accuracy in single browser (including incognito mode)
 ### 1. fingerprintId (id) generated from all data
-### 2. canvas fingerprint (canvas.fp) generated from custom canvas element
+### 2. canvas fingerprint (canvas.fingerprint) generated from custom canvas element
 
 
 ## Project setup
