@@ -20,7 +20,7 @@ export interface FPInterface {
     engine?: string;
     engineVersion?: string;
     extensions?: string;
-    fingerPrintId?: string;
+    id?: string;
     flash?: boolean;
     flashVersion?: string;
     fonts?: string[];
@@ -128,7 +128,7 @@ export interface TouchSupport {
 }
 export interface Canvas {
     canvasWinding?: string;
-    canvasFp?: string;
+    fingerprint?: string;
     [key: string]: string | undefined;
 }
 export interface Mobile {

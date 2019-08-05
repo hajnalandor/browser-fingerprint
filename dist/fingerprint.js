@@ -117,7 +117,7 @@ var Fingerprint = (function () {
             browserVersion: undefined,
             canvas: {
                 canvasWinding: undefined,
-                canvasFp: undefined
+                fingerprint: undefined
             },
             colorDepth: undefined,
             cpu: undefined,
@@ -243,7 +243,7 @@ var Fingerprint = (function () {
             webglVertexShaderMediumIntPrecisionRangeMax: undefined,
             webglVertexShaderMediumIntPrecisionRangeMin: undefined
         };
-        this.fingerprintId = '';
+        this.id = '';
     }
     Fingerprint.create = function () {
         var fingerprint = new Fingerprint();
@@ -260,11 +260,11 @@ var Fingerprint = (function () {
     Fingerprint.prototype.getCustomFingerPr = function (fp2components) {
         this.clientJsFingerprint();
         this.fingerPrint2jsFingerprint(fp2components);
-        this.fingerprintId = btoa(this.fingerprintId);
+        this.id = btoa(this.id);
     };
     Fingerprint.prototype.buildfp = function (fp2components) {
         var _this = this;
-        this.fp['fingerPrintId'] = this.fingerprintId;
+        this.fp['fingerPrintId'] = this.id;
         fp2components.forEach(function (data) {
             if (data.key == 'availableScreenResolution') {
                 _this.setAvailableScreenResolutin(data);
@@ -302,26 +302,26 @@ var Fingerprint = (function () {
         this.fp.touchSupport = ts;
     };
     Fingerprint.prototype.clientJsFingerprint = function () {
-        this.fingerprintId = this.client.getFingerprint() + '-';
-        this.fingerprintId += this.client.getCustomFingerprint(this.client.getTimeZone()) + '-';
-        this.fingerprintId += this.client.getCustomFingerprint(this.client.getLanguage()) + '-';
-        this.fingerprintId += this.client.getCustomFingerprint(this.client.getEngine(), this.client.getBrowser(), this.client.getBrowserVersion()) + '-';
-        this.fingerprintId += this.client.getCustomFingerprint(this.client.getDevice(), this.client.getDeviceType()) + '-';
-        this.fingerprintId += this.client.getCustomFingerprint(this.client.getCPU()) + '-';
-        this.fingerprintId += this.client.getCustomFingerprint(this.client.getOS.toString(), this.client.getOSVersion(), this.client.getSystemLanguage()) + '-';
-        this.fingerprintId += this.client.getCustomFingerprint(this.client.isWindows().toString(), this.client.isMac().toString(), this.client.isLinux().toString(), this.client.isUbuntu().toString(), this.client.isSolaris().toString()) + '-';
-        this.fingerprintId += this.client.getCustomFingerprint(this.client.isChrome().toString(), this.client.isSafari().toString(), this.client.isMobileSafari().toString(), this.client.isOpera().toString()) + '-';
-        this.fingerprintId += this.client.getCustomFingerprint(this.client.isMobile().toString(), this.client.isMobileMajor().toString(), this.client.isMobileAndroid().toString(), this.client.isMobileOpera().toString(), this.client.isMobileWindows().toString(), this.client.isMobileBlackBerry().toString()) + '-';
-        this.fingerprintId += this.client.getCustomFingerprint(this.client.getScreenPrint()) + '-';
-        this.fingerprintId += this.client.getCustomFingerprint(this.client.isJava().toString(), this.client.isFlash().toString(), this.client.getFlashVersion()) + '-';
+        this.id = this.client.getFingerprint() + '-';
+        this.id += this.client.getCustomFingerprint(this.client.getTimeZone()) + '-';
+        this.id += this.client.getCustomFingerprint(this.client.getLanguage()) + '-';
+        this.id += this.client.getCustomFingerprint(this.client.getEngine(), this.client.getBrowser(), this.client.getBrowserVersion()) + '-';
+        this.id += this.client.getCustomFingerprint(this.client.getDevice(), this.client.getDeviceType()) + '-';
+        this.id += this.client.getCustomFingerprint(this.client.getCPU()) + '-';
+        this.id += this.client.getCustomFingerprint(this.client.getOS.toString(), this.client.getOSVersion(), this.client.getSystemLanguage()) + '-';
+        this.id += this.client.getCustomFingerprint(this.client.isWindows().toString(), this.client.isMac().toString(), this.client.isLinux().toString(), this.client.isUbuntu().toString(), this.client.isSolaris().toString()) + '-';
+        this.id += this.client.getCustomFingerprint(this.client.isChrome().toString(), this.client.isSafari().toString(), this.client.isMobileSafari().toString(), this.client.isOpera().toString()) + '-';
+        this.id += this.client.getCustomFingerprint(this.client.isMobile().toString(), this.client.isMobileMajor().toString(), this.client.isMobileAndroid().toString(), this.client.isMobileOpera().toString(), this.client.isMobileWindows().toString(), this.client.isMobileBlackBerry().toString()) + '-';
+        this.id += this.client.getCustomFingerprint(this.client.getScreenPrint()) + '-';
+        this.id += this.client.getCustomFingerprint(this.client.isJava().toString(), this.client.isFlash().toString(), this.client.getFlashVersion()) + '-';
     };
     Fingerprint.prototype.fingerPrint2jsFingerprint = function (fp2comp) {
         for (var i = 0; i < fp2comp.length; i++) {
             if (Array.isArray(fp2comp[i].value)) {
                 for (var j = 0; j < fp2comp[i].value.length; j++) {
-                    this.fingerprintId += this.client.getCustomFingerprint(fp2comp[i].value[j]);
+                    this.id += this.client.getCustomFingerprint(fp2comp[i].value[j]);
                     if (j < fp2comp[i].value.length - 1) {
-                        this.fingerprintId += '-';
+                        this.id += '-';
                     }
                 }
             }
@@ -329,10 +329,10 @@ var Fingerprint = (function () {
                 if (fp2comp[i].key == 'adBlock') {
                     continue;
                 }
-                this.fingerprintId += this.client.getCustomFingerprint(fp2comp[i].value);
+                this.id += this.client.getCustomFingerprint(fp2comp[i].value);
             }
             if (i < fp2comp.length - 1) {
-                this.fingerprintId += '-';
+                this.id += '-';
             }
         }
     };
@@ -347,11 +347,11 @@ var Fingerprint = (function () {
     Fingerprint.prototype.setCanvas = function (data) {
         var canvas = {
             canvasWinding: undefined,
-            canvasFp: undefined
+            fingerprint: undefined
         };
         data.value.forEach(function (canvasElement) {
             if (canvasElement.substring(0, canvasElement.indexOf(':')) === 'canvas fp') {
-                canvas['canvasFp'] = canvasElement.substring(canvasElement.indexOf(':') + 1, canvasElement.length);
+                canvas['fingerprint'] = canvasElement.substring(canvasElement.indexOf(':') + 1, canvasElement.length);
             }
             else if (canvasElement.substring(0, canvasElement.indexOf(':')) === 'canvas winding') {
                 canvas['canvasWinding'] = canvasElement.substring(canvasElement.indexOf(':') + 1, canvasElement.length);

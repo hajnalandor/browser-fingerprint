@@ -2,7 +2,7 @@ import { FPInterface } from './IFingerprint';
 import 'clientjs';
 export default class Fingerprint {
     private client;
-    private fingerprintId;
+    private id;
     private fp;
     constructor();
     static create(): FPInterface;
