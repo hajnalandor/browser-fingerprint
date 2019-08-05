@@ -34,7 +34,7 @@ export default class Fingerprint {
     engine : undefined,
     engineVersion : undefined,
     extensions : undefined,
-    fingerPrintId : undefined,
+    id : undefined,
     flash : undefined,
     flashVersion : undefined,
     fonts : [],

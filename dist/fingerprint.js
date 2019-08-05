@@ -131,7 +131,7 @@ var Fingerprint = (function () {
             engine: undefined,
             engineVersion: undefined,
             extensions: undefined,
-            fingerPrintId: undefined,
+            id: undefined,
             flash: undefined,
             flashVersion: undefined,
             fonts: [],
