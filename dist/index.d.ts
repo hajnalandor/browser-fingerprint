@@ -1,1 +1,2 @@
-export declare function getFingerprint(): import("./IFingerprint").FPInterface;
+import { FPInterface } from "./IFingerprint";
+export declare function getFingerprint(): FPInterface;

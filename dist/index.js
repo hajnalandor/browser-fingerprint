@@ -1986,7 +1986,9 @@ module.exports = __webpack_amd_options__;
 Object.defineProperty(exports, "__esModule", { value: true });
 var fingerprint_1 = __webpack_require__(0);
 function getFingerprint() {
-    return fingerprint_1.default.create();
+    var fp = fingerprint_1.default.create();
+    console.log(fp);
+    return fp;
 }
 exports.getFingerprint = getFingerprint;
 

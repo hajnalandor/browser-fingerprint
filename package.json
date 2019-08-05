@@ -1,8 +1,8 @@
 {
   "name": "@hajnalandor/browser-fingerprint",
-  "version": "0.0.4",
+  "version": "0.0.8",
   "description": "browser fingerprint based on fingerprint2js and clientjs",
-  "main": "index.js",
+  "main": "./dist/fingerprint.js",
   "scripts": {
     "build": "rm -r ./dist && mkdir ./dist && cd ./lib && webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
