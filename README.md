@@ -42,7 +42,7 @@ console.log(Fingerprint.create());
     browserVersion : string 
     canvas : {
        canvasWinding : string 
-       canvasFp : string 
+       fingerprint : string 
     }
     colorDepth : number  
     cpu : string 
@@ -56,7 +56,7 @@ console.log(Fingerprint.create());
     engine : string 
     engineVersion : string 
     extensions : string 
-    fingerPrintId : string 
+    id : string 
     flash : boolean 
     flashVersion : string 
     fonts : string[] 
