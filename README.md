@@ -5,7 +5,7 @@ browser-fingerprint returns a client object to find out as much useful informati
 
 Browser-fingerprint attempts to solve the problem of making client data more easily available. Good data is necessary for good analytics that help you make better business and tech choices. Do you have good informative data about how your users connect to your site? Do you know their average screen size? BF can help you collect data and make good decisions for your application and business.
 This library uses clientjs and fingerprintjs2
-## 3 major fingerprint hash which has uniqueness more than 95% accuracy
+## 3 major fingerprint hash which has uniqueness more than 95% accuracy in single browser (including incognito mode)
 ### 1. fingerprintId generated from all data
 ### 2. canvas fingerprint
 ### 3. webGl fingerprint
