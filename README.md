@@ -24,7 +24,7 @@ This library uses clientjs and fingerprintjs2
   ```
 ## Usage
 ```
-import Fingerprint from '../node_modules/@hajnalandor/browser-fingerprint/dist/fingerprint' 
+import Fingerprint from '@hajnalandor/browser-fingerprint' 
 ...
 ...
 console.log(Fingerprint.create());
