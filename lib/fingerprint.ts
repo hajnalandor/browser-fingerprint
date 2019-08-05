@@ -7,7 +7,7 @@ import * as Fingerprint2 from 'fingerprintjs2';
 export default class Fingerprint {
 
   private client = new ClientJS();
-  private fingerprintId: string;
+  private id: string;
   private fp: FPInterface = {
     adBlock : '',
     addBehavior : undefined,
@@ -19,7 +19,7 @@ export default class Fingerprint {
     browserVersion : undefined,
     canvas : {
       canvasWinding : undefined,
-      canvasFp : undefined
+      fingerprint : undefined
     } as Canvas,
     colorDepth : undefined,
     cpu : undefined,
@@ -148,7 +148,7 @@ export default class Fingerprint {
   }; 
 
   constructor() {
-    this.fingerprintId = '';
+    this.id = '';
   }
   
   public static create(): FPInterface {
@@ -167,11 +167,11 @@ export default class Fingerprint {
   private getCustomFingerPr(fp2components: any[]): void {
     this.clientJsFingerprint();
     this.fingerPrint2jsFingerprint(fp2components);   
-    this.fingerprintId = btoa(this.fingerprintId)
+    this.id = btoa(this.id)
   }
     
   private buildfp(fp2components: any[]): void {
-    this.fp['fingerPrintId'] = this.fingerprintId;
+    this.fp['fingerPrintId'] = this.id;
     fp2components.forEach((data) => {
       if (data.key == 'availableScreenResolution') {
         this.setAvailableScreenResolutin(data);
@@ -205,37 +205,37 @@ export default class Fingerprint {
   }
 
   private clientJsFingerprint(): void {
-    this.fingerprintId = this.client.getFingerprint()+'-'
-    this.fingerprintId += this.client.getCustomFingerprint(this.client.getTimeZone()) + '-'
-    this.fingerprintId += this.client.getCustomFingerprint(this.client.getLanguage()) + '-'
-    this.fingerprintId += this.client.getCustomFingerprint(this.client.getEngine(),this.client.getBrowser(),this.client.getBrowserVersion()) + '-'
-    this.fingerprintId += this.client.getCustomFingerprint(this.client.getDevice(), this.client.getDeviceType())+ '-'
-    this.fingerprintId += this.client.getCustomFingerprint(this.client.getCPU()) + '-'
-    this.fingerprintId += this.client.getCustomFingerprint(this.client.getOS.toString(),this.client.getOSVersion(),this.client.getSystemLanguage()) + '-'
-    this.fingerprintId += this.client.getCustomFingerprint(this.client.isWindows().toString(),this.client.isMac().toString(), this.client.isLinux().toString(),this.client.isUbuntu().toString(),this.client.isSolaris().toString()) + '-'
-    this.fingerprintId += this.client.getCustomFingerprint(this.client.isChrome().toString(),this.client.isSafari().toString(),this.client.isMobileSafari().toString(),this.client.isOpera().toString()) + '-'
-    this.fingerprintId += this.client.getCustomFingerprint(this.client.isMobile().toString(),this.client.isMobileMajor().toString(),this.client.isMobileAndroid().toString(),this.client.isMobileOpera().toString(),this.client.isMobileWindows().toString(),this.client.isMobileBlackBerry().toString()) + '-'
-    this.fingerprintId += this.client.getCustomFingerprint(this.client.getScreenPrint()) + '-'
-    this.fingerprintId += this.client.getCustomFingerprint(this.client.isJava().toString(),this.client.isFlash().toString(),this.client.getFlashVersion()) + '-' 
+    this.id = this.client.getFingerprint()+'-'
+    this.id += this.client.getCustomFingerprint(this.client.getTimeZone()) + '-'
+    this.id += this.client.getCustomFingerprint(this.client.getLanguage()) + '-'
+    this.id += this.client.getCustomFingerprint(this.client.getEngine(),this.client.getBrowser(),this.client.getBrowserVersion()) + '-'
+    this.id += this.client.getCustomFingerprint(this.client.getDevice(), this.client.getDeviceType())+ '-'
+    this.id += this.client.getCustomFingerprint(this.client.getCPU()) + '-'
+    this.id += this.client.getCustomFingerprint(this.client.getOS.toString(),this.client.getOSVersion(),this.client.getSystemLanguage()) + '-'
+    this.id += this.client.getCustomFingerprint(this.client.isWindows().toString(),this.client.isMac().toString(), this.client.isLinux().toString(),this.client.isUbuntu().toString(),this.client.isSolaris().toString()) + '-'
+    this.id += this.client.getCustomFingerprint(this.client.isChrome().toString(),this.client.isSafari().toString(),this.client.isMobileSafari().toString(),this.client.isOpera().toString()) + '-'
+    this.id += this.client.getCustomFingerprint(this.client.isMobile().toString(),this.client.isMobileMajor().toString(),this.client.isMobileAndroid().toString(),this.client.isMobileOpera().toString(),this.client.isMobileWindows().toString(),this.client.isMobileBlackBerry().toString()) + '-'
+    this.id += this.client.getCustomFingerprint(this.client.getScreenPrint()) + '-'
+    this.id += this.client.getCustomFingerprint(this.client.isJava().toString(),this.client.isFlash().toString(),this.client.getFlashVersion()) + '-' 
   }
    
   private fingerPrint2jsFingerprint(fp2comp: any[]): void {
     for (var i = 0; i < fp2comp.length; i++) {
       if (Array.isArray(fp2comp[i].value)) {
         for (var j = 0; j < fp2comp[i].value.length; j++) {
-          this.fingerprintId += this.client.getCustomFingerprint(fp2comp[i].value[j])
+          this.id += this.client.getCustomFingerprint(fp2comp[i].value[j])
           if (j < fp2comp[i].value.length - 1) {
-            this.fingerprintId += '-';
+            this.id += '-';
           }
         }
       } else {
         if (fp2comp[i].key == 'adBlock') {
           continue;
         }
-        this.fingerprintId += this.client.getCustomFingerprint(fp2comp[i].value) 
+        this.id += this.client.getCustomFingerprint(fp2comp[i].value) 
         }
       if (i < fp2comp.length - 1) {
-        this.fingerprintId += '-';
+        this.id += '-';
       }
     }
   }
@@ -253,11 +253,11 @@ export default class Fingerprint {
   private setCanvas(data: any): void {
     var canvas : Canvas = {
       canvasWinding : undefined,
-      canvasFp : undefined
+      fingerprint : undefined
     };
     data.value.forEach((canvasElement: string) => {
       if (canvasElement.substring(0,canvasElement.indexOf(':')) === 'canvas fp') {
-        canvas['canvasFp'] = canvasElement.substring(canvasElement.indexOf(':') + 1, canvasElement.length);
+        canvas['fingerprint'] = canvasElement.substring(canvasElement.indexOf(':') + 1, canvasElement.length);
       } else if (canvasElement.substring(0,canvasElement.indexOf(':')) === 'canvas winding') {
         canvas['canvasWinding'] = canvasElement.substring(canvasElement.indexOf(':') + 1, canvasElement.length);
       }
