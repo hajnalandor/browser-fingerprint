@@ -119,7 +119,6 @@ var Fingerprint = (function () {
                 canvasWinding: undefined,
                 canvasFp: undefined
             },
-            canvasPrint: undefined,
             colorDepth: undefined,
             cpu: undefined,
             cpuClass: undefined,
@@ -176,7 +175,7 @@ var Fingerprint = (function () {
             timeZoneAbbreviation: undefined,
             timezone: undefined,
             timezoneOffset: undefined,
-            touchSupport: [],
+            touchSupport: undefined,
             userAgent: undefined,
             webdriver: undefined,
             webglAliasedLineWidthRange: [],
@@ -282,11 +281,25 @@ var Fingerprint = (function () {
             else if (data.key == 'webgl') {
                 _this.setWebgl(data);
             }
+            else if (data.key == 'touchSupport') {
+                _this.setTouchSupport(data);
+            }
             else {
                 _this.fp[data.key] = data.value;
             }
         });
         this.setClientJsComponents();
+    };
+    Fingerprint.prototype.setTouchSupport = function (data) {
+        var ts = {
+            maxTouchPoints: undefined,
+            touchEvent: undefined,
+            touchStart: undefined
+        };
+        ts.maxTouchPoints = data[0];
+        ts.touchEvent = data[1];
+        ts.touchStart = data[2];
+        this.fp.touchSupport = ts;
     };
     Fingerprint.prototype.clientJsFingerprint = function () {
         this.fingerprintId = this.client.getFingerprint() + '-';
@@ -380,7 +393,6 @@ var Fingerprint = (function () {
         this.fp['silverlightVersion'] = this.client.getSilverlightVersion();
         this.fp['mimeType'] = this.client.getMimeTypes();
         this.fp['ismimeType'] = this.client.isMimeTypes();
-        this.fp['canvasPrint'] = this.client.getCanvasPrint();
         this.setMobileInformations();
         this.setBrowserInformation();
         this.setDeviceInformation();

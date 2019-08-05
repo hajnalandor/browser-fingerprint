@@ -9,6 +9,7 @@ export default class Fingerprint {
     private generateFingerprint;
     private getCustomFingerPr;
     private buildfp;
+    private setTouchSupport;
     private clientJsFingerprint;
     private fingerPrint2jsFingerprint;
     private setAvailableScreenResolutin;

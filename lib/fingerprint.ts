@@ -1,4 +1,4 @@
-import {FPInterface, Mobile,Canvas} from './IFingerprint';
+import {FPInterface, Mobile,Canvas, TouchSupport} from './IFingerprint';
 
 import 'clientjs'
 import * as Fingerprint2 from 'fingerprintjs2';
@@ -21,11 +21,11 @@ export default class Fingerprint {
       canvasWinding : undefined,
       canvasFp : undefined
     } as Canvas,
-    canvasPrint : undefined,
     colorDepth : undefined,
     cpu : undefined,
     cpuClass : undefined,
     currentResolution : undefined,
+    // webgl data FP2
     data : undefined,
     device : undefined,
     deviceMemory : undefined,
@@ -78,7 +78,7 @@ export default class Fingerprint {
     timeZoneAbbreviation : undefined,
     timezone : undefined,
     timezoneOffset : undefined,
-    touchSupport : [],
+    touchSupport : undefined,
     userAgent : undefined,
     webdriver : undefined,
     webglAliasedLineWidthRange : [],
@@ -183,11 +183,25 @@ export default class Fingerprint {
         this.setPlugins(data);
       } else if (data.key == 'webgl') {
         this.setWebgl(data);
+      } else if (data.key == 'touchSupport') {
+        this.setTouchSupport(data);
       } else {
         this.fp[data.key] = data.value;
       }
     });
     this.setClientJsComponents();
+  }
+
+  private setTouchSupport(data: any[]) : void {
+    let ts : TouchSupport = {
+      maxTouchPoints: undefined,
+      touchEvent: undefined,
+      touchStart: undefined
+    }
+    ts.maxTouchPoints = data[0];
+    ts.touchEvent = data[1];
+    ts.touchStart = data[2];
+    this.fp.touchSupport = ts;
   }
 
   private clientJsFingerprint(): void {
@@ -286,7 +300,6 @@ export default class Fingerprint {
     this.fp['silverlightVersion'] = this.client.getSilverlightVersion();
     this.fp['mimeType'] = this.client.getMimeTypes();
     this.fp['ismimeType'] = this.client.isMimeTypes();
-    this.fp['canvasPrint'] = this.client.getCanvasPrint();
     this.setMobileInformations();
     this.setBrowserInformation();
     this.setDeviceInformation();

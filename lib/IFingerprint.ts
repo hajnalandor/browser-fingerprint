@@ -5,15 +5,14 @@ export interface FPInterface {
   availableScreenResolutionHeight? : number
   availableScreenResolutionWidth? : number
   browser? : string
-  browserData? : BrowserData
   browserMajorVersion? : string
   browserVersion? : string
   canvas? : Canvas
-  canvasPrint? : string
   colorDepth? : number
   cpu? : string
   cpuClass? : string
   currentResolution? : string
+  // webglData
   data? : string
   device? : string
   deviceMemory? : number
@@ -54,7 +53,7 @@ export interface FPInterface {
   timeZoneAbbreviation? : string
   timezone? : string
   timezoneOffset? : number
-  touchSupport? : any[]
+  touchSupport? : TouchSupport;
   userAgent? : string
   webdriver? : string
   webglAliasedLineWidthRange? : string[]
@@ -124,13 +123,12 @@ export interface FPInterface {
   [key: string] : any|string|number|boolean
 }
 
-export interface BrowserData {
-  ua? : string
-  browser? : any
-  engine? : any
-  os? : any
-  device? : any
+export interface TouchSupport {
+  maxTouchPoints: number|undefined
+  touchEvent: boolean|undefined
+  touchStart: boolean|undefined
 }
+
 
 export interface Canvas {
   canvasWinding? : string
