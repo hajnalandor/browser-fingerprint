@@ -264,7 +264,7 @@ var Fingerprint = (function () {
     };
     Fingerprint.prototype.buildfp = function (fp2components) {
         var _this = this;
-        this.fp['fingerPrintId'] = this.id;
+        this.fp['id'] = this.id;
         fp2components.forEach(function (data) {
             if (data.key == 'availableScreenResolution') {
                 _this.setAvailableScreenResolutin(data);

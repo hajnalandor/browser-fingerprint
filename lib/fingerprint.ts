@@ -171,7 +171,7 @@ export default class Fingerprint {
   }
     
   private buildfp(fp2components: any[]): void {
-    this.fp['fingerPrintId'] = this.id;
+    this.fp['id'] = this.id;
     fp2components.forEach((data) => {
       if (data.key == 'availableScreenResolution') {
         this.setAvailableScreenResolutin(data);
