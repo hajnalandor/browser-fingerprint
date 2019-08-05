@@ -1,6 +1,6 @@
 {
   "name": "@hajnalandor/browser-fingerprint",
-  "version": "0.0.8",
+  "version": "0.0.12",
   "description": "browser fingerprint based on fingerprint2js and clientjs",
   "main": "./dist/fingerprint.js",
   "scripts": {
