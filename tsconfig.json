@@ -6,6 +6,7 @@
     "declaration": true,
     "outDir": "./dist",
     "strict": true,
-    "removeComments": true
+    "removeComments": true,
+    "esModuleInterop": true // Emit __importStar and __importDefault helpers for runtime babel ecosystem compatibility and enable --allowSyntheticDefaultImports for typesystem compatibility.
   }
 }

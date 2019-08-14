@@ -1,6 +1,6 @@
 {
   "name": "@hajnalandor/browser-fingerprint",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "browser fingerprint based on fingerprint2js and clientjs",
   "main": "./dist/fingerprint.js",
   "scripts": {
@@ -27,6 +27,7 @@
     "@types/clientjs": "^0.1.0",
     "@types/fingerprintjs2": "^2.0.0",
     "fingerprintjs2": "^2.1.0",
+    "hash.js": "^1.1.7",
     "uglifyjs-webpack-plugin": "^2.2.0"
   }
 }

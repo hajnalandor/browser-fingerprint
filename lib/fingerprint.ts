@@ -2,7 +2,7 @@ import {FPInterface, Mobile,Canvas, TouchSupport} from './IFingerprint';
 
 import 'clientjs'
 import * as Fingerprint2 from 'fingerprintjs2';
-
+import hash from 'hash.js';
 // @TODO addblock is not in fingerprint because in Chrome incognito is not enabled by default
 export default class Fingerprint {
 
@@ -166,12 +166,11 @@ export default class Fingerprint {
 
   private getCustomFingerPr(fp2components: any[]): void {
     this.clientJsFingerprint();
-    this.fingerPrint2jsFingerprint(fp2components);   
-    this.id = btoa(this.id)
+    this.fingerPrint2jsFingerprint(fp2components);
   }
     
   private buildfp(fp2components: any[]): void {
-    this.fp['id'] = this.id;
+    this.fp['id'] = hash.sha1().update(this.id).digest('hex');
     fp2components.forEach((data) => {
       if (data.key == 'availableScreenResolution') {
         this.setAvailableScreenResolutin(data);
