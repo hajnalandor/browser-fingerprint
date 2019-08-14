@@ -296,9 +296,9 @@ var Fingerprint = (function () {
             touchEvent: undefined,
             touchStart: undefined
         };
-        ts.maxTouchPoints = data[0];
-        ts.touchEvent = data[1];
-        ts.touchStart = data[2];
+        ts.maxTouchPoints = data.value[0];
+        ts.touchEvent = data.value[1];
+        ts.touchStart = data.value[2];
         this.fp.touchSupport = ts;
     };
     Fingerprint.prototype.clientJsFingerprint = function () {
