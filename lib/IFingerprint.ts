@@ -56,8 +56,8 @@ export interface FPInterface {
   touchSupport? : TouchSupport;
   userAgent? : string
   webdriver? : string
-  webglAliasedLineWidthRange? : string[]
-  webglAliasedPointSizeRange? : string[]
+  webglAliasedLineWidthRange? : string
+  webglAliasedPointSizeRange? : string
   webglAlphaBits? : string
   webglAntialiasing? : string
   webglBlueBits? : string
