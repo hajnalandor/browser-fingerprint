@@ -1025,140 +1025,144 @@ var Fingerprint = (function () {
         this.client = new ClientJS();
         this.fp = {
             adBlock: '',
-            addBehavior: undefined,
-            audio: undefined,
-            availableScreenResolutionHeight: undefined,
-            availableScreenResolutionWidth: undefined,
-            browser: undefined,
-            browserMajorVersion: undefined,
-            browserVersion: undefined,
+            addBehavior: '',
+            audio: '',
+            availableScreenResolutionHeight: '',
+            availableScreenResolutionWidth: '',
+            browser: '',
+            browserMajorVersion: '',
+            browserVersion: '',
             canvas: {
-                canvasWinding: undefined,
-                fingerprint: undefined
+                canvasWinding: '',
+                fingerprint: ''
             },
-            colorDepth: undefined,
-            cpu: undefined,
-            cpuClass: undefined,
-            currentResolution: undefined,
-            data: undefined,
-            device: undefined,
-            deviceMemory: undefined,
-            deviceType: undefined,
-            deviceVendor: undefined,
-            engine: undefined,
-            engineVersion: undefined,
-            extensions: undefined,
-            id: undefined,
-            flash: undefined,
-            flashVersion: undefined,
+            colorDepth: '',
+            cpu: '',
+            cpuClass: '',
+            currentResolution: '',
+            data: '',
+            device: '',
+            deviceMemory: '',
+            deviceType: '',
+            deviceVendor: '',
+            engine: '',
+            engineVersion: '',
+            extensions: '',
+            id: '',
+            flash: '',
+            flashVersion: '',
             fonts: [],
-            getSoftwareVersion: undefined,
-            hardwareConcurrency: undefined,
-            hasLiedBrowser: undefined,
-            hasLiedLanguages: undefined,
-            hasLiedOs: undefined,
-            hasLiedResolution: undefined,
-            indexedDb: undefined,
-            ismimeType: undefined,
-            java: undefined,
-            javaVersion: undefined,
-            language: undefined,
-            localStorage: undefined,
-            mimeType: undefined,
+            getSoftwareVersion: '',
+            hardwareConcurrency: '',
+            hasLiedBrowser: '',
+            hasLiedLanguages: '',
+            hasLiedOs: '',
+            hasLiedResolution: '',
+            indexedDb: '',
+            ismimeType: '',
+            java: '',
+            javaVersion: '',
+            language: '',
+            localStorage: '',
+            mimeType: '',
             mobile: {
-                isMobile: undefined,
-                isMobileSafari: undefined,
-                isMobileMajor: undefined,
-                isMobileAndroid: undefined,
-                isMobileOpera: undefined,
-                isMobileWindows: undefined,
-                isMobileBlackBerry: undefined,
-                isMobileIOS: undefined,
-                isIphone: undefined,
-                isIpad: undefined,
-                isIpod: undefined
+                isMobile: '',
+                isMobileSafari: '',
+                isMobileMajor: '',
+                isMobileAndroid: '',
+                isMobileOpera: '',
+                isMobileWindows: '',
+                isMobileBlackBerry: '',
+                isMobileIOS: '',
+                isIphone: '',
+                isIpad: '',
+                isIpod: ''
             },
-            openDatabase: undefined,
-            os: undefined,
-            osVersion: undefined,
-            platform: undefined,
+            openDatabase: '',
+            os: '',
+            osVersion: '',
+            platform: '',
             plugins: [],
-            screenResolutionHeight: undefined,
-            screenResolutionWidth: undefined,
-            sessionStorage: undefined,
-            silverlight: undefined,
-            silverlightVersion: undefined,
-            systemLanguage: undefined,
-            timeZoneAbbreviation: undefined,
-            timezone: undefined,
-            timezoneOffset: undefined,
-            touchSupport: undefined,
-            userAgent: undefined,
-            webdriver: undefined,
-            webglAliasedLineWidthRange: undefined,
-            webglAliasedPointSizeRange: undefined,
-            webglAlphaBits: undefined,
-            webglAntialiasing: undefined,
-            webglBlueBits: undefined,
-            webglDepthBits: undefined,
-            webglFragmentShaderHighFloatPrecision: undefined,
-            webglFragmentShaderHighFloatPrecisionRangeMax: undefined,
-            webglFragmentShaderHighFloatPrecisionRangeMin: undefined,
-            webglFragmentShaderHighIntPrecision: undefined,
-            webglFragmentShaderHighIntPrecisionRangeMax: undefined,
-            webglFragmentShaderHighIntPrecisionRangeMin: undefined,
-            webglFragmentShaderLowFloatPrecision: undefined,
-            webglFragmentShaderLowFloatPrecisionRangeMax: undefined,
-            webglFragmentShaderLowFloatPrecisionRangeMin: undefined,
-            webglFragmentShaderLowIntPrecision: undefined,
-            webglFragmentShaderLowIntPrecisionRangeMax: undefined,
-            webglFragmentShaderLowIntPrecisionRangeMin: undefined,
-            webglFragmentShaderMediumFloatPrecision: undefined,
-            webglFragmentShaderMediumFloatPrecisionRangeMax: undefined,
-            webglFragmentShaderMediumFloatPrecisionRangeMin: undefined,
-            webglFragmentShaderMediumIntPrecision: undefined,
-            webglFragmentShaderMediumIntPrecisionRangeMax: undefined,
-            webglFragmentShaderMediumIntPrecisionRangeMin: undefined,
-            webglGreenBits: undefined,
-            webglMaxAnisotropy: undefined,
-            webglMaxCombinedTextureImageUnits: undefined,
-            webglMaxCubeMapTextureSize: undefined,
-            webglMaxFragmentUniformVectors: undefined,
-            webglMaxRenderBufferSize: undefined,
-            webglMaxTextureImageUnits: undefined,
-            webglMaxTextureSize: undefined,
-            webglMaxVaryingVectors: undefined,
-            webglMaxVertexAttribs: undefined,
-            webglMaxVertexTextureImageUnits: undefined,
-            webglMaxVertexUniformVectors: undefined,
-            webglMaxViewportDims: undefined,
-            webglRedBits: undefined,
-            webglRenderer: undefined,
-            webglShadingLanguageVersion: undefined,
-            webglStencilBits: undefined,
-            webglUnmaskedRenderer: undefined,
-            webglUnmaskedVendor: undefined,
-            webglVendor: undefined,
-            webglVendorAndRenderer: undefined,
-            webglVersion: undefined,
-            webglVertexShaderHighFloatPrecision: undefined,
-            webglVertexShaderHighFloatPrecisionRangeMax: undefined,
-            webglVertexShaderHighFloatPrecisionRangeMin: undefined,
-            webglVertexShaderHighIntPrecision: undefined,
-            webglVertexShaderHighIntPrecisionRangeMax: undefined,
-            webglVertexShaderHighIntPrecisionRangeMin: undefined,
-            webglVertexShaderLowFloatPrecision: undefined,
-            webglVertexShaderLowFloatPrecisionRangeMax: undefined,
-            webglVertexShaderLowFloatPrecisionRangeMin: undefined,
-            webglVertexShaderLowIntPrecision: undefined,
-            webglVertexShaderLowIntPrecisionRangeMax: undefined,
-            webglVertexShaderLowIntPrecisionRangeMin: undefined,
-            webglVertexShaderMediumFloatPrecision: undefined,
-            webglVertexShaderMediumFloatPrecisionRangeMax: undefined,
-            webglVertexShaderMediumFloatPrecisionRangeMin: undefined,
-            webglVertexShaderMediumIntPrecision: undefined,
-            webglVertexShaderMediumIntPrecisionRangeMax: undefined,
-            webglVertexShaderMediumIntPrecisionRangeMin: undefined
+            screenResolutionHeight: '',
+            screenResolutionWidth: '',
+            sessionStorage: '',
+            silverlight: '',
+            silverlightVersion: '',
+            systemLanguage: '',
+            timeZoneAbbreviation: '',
+            timezone: '',
+            timezoneOffset: '',
+            touchSupport: {
+                maxTouchPoints: '',
+                touchEvent: '',
+                touchStart: ''
+            },
+            userAgent: '',
+            webdriver: '',
+            webglAliasedLineWidthRange: '',
+            webglAliasedPointSizeRange: '',
+            webglAlphaBits: '',
+            webglAntialiasing: '',
+            webglBlueBits: '',
+            webglDepthBits: '',
+            webglFragmentShaderHighFloatPrecision: '',
+            webglFragmentShaderHighFloatPrecisionRangeMax: '',
+            webglFragmentShaderHighFloatPrecisionRangeMin: '',
+            webglFragmentShaderHighIntPrecision: '',
+            webglFragmentShaderHighIntPrecisionRangeMax: '',
+            webglFragmentShaderHighIntPrecisionRangeMin: '',
+            webglFragmentShaderLowFloatPrecision: '',
+            webglFragmentShaderLowFloatPrecisionRangeMax: '',
+            webglFragmentShaderLowFloatPrecisionRangeMin: '',
+            webglFragmentShaderLowIntPrecision: '',
+            webglFragmentShaderLowIntPrecisionRangeMax: '',
+            webglFragmentShaderLowIntPrecisionRangeMin: '',
+            webglFragmentShaderMediumFloatPrecision: '',
+            webglFragmentShaderMediumFloatPrecisionRangeMax: '',
+            webglFragmentShaderMediumFloatPrecisionRangeMin: '',
+            webglFragmentShaderMediumIntPrecision: '',
+            webglFragmentShaderMediumIntPrecisionRangeMax: '',
+            webglFragmentShaderMediumIntPrecisionRangeMin: '',
+            webglGreenBits: '',
+            webglMaxAnisotropy: '',
+            webglMaxCombinedTextureImageUnits: '',
+            webglMaxCubeMapTextureSize: '',
+            webglMaxFragmentUniformVectors: '',
+            webglMaxRenderBufferSize: '',
+            webglMaxTextureImageUnits: '',
+            webglMaxTextureSize: '',
+            webglMaxVaryingVectors: '',
+            webglMaxVertexAttribs: '',
+            webglMaxVertexTextureImageUnits: '',
+            webglMaxVertexUniformVectors: '',
+            webglMaxViewportDims: '',
+            webglRedBits: '',
+            webglRenderer: '',
+            webglShadingLanguageVersion: '',
+            webglStencilBits: '',
+            webglUnmaskedRenderer: '',
+            webglUnmaskedVendor: '',
+            webglVendor: '',
+            webglVendorAndRenderer: '',
+            webglVersion: '',
+            webglVertexShaderHighFloatPrecision: '',
+            webglVertexShaderHighFloatPrecisionRangeMax: '',
+            webglVertexShaderHighFloatPrecisionRangeMin: '',
+            webglVertexShaderHighIntPrecision: '',
+            webglVertexShaderHighIntPrecisionRangeMax: '',
+            webglVertexShaderHighIntPrecisionRangeMin: '',
+            webglVertexShaderLowFloatPrecision: '',
+            webglVertexShaderLowFloatPrecisionRangeMax: '',
+            webglVertexShaderLowFloatPrecisionRangeMin: '',
+            webglVertexShaderLowIntPrecision: '',
+            webglVertexShaderLowIntPrecisionRangeMax: '',
+            webglVertexShaderLowIntPrecisionRangeMin: '',
+            webglVertexShaderMediumFloatPrecision: '',
+            webglVertexShaderMediumFloatPrecisionRangeMax: '',
+            webglVertexShaderMediumFloatPrecisionRangeMin: '',
+            webglVertexShaderMediumIntPrecision: '',
+            webglVertexShaderMediumIntPrecisionRangeMax: '',
+            webglVertexShaderMediumIntPrecisionRangeMin: ''
         };
         this.id = '';
     }
@@ -1201,20 +1205,20 @@ var Fingerprint = (function () {
                 _this.setTouchSupport(data);
             }
             else {
-                _this.fp[data.key] = data.value;
+                _this.fp[data.key] = String(data.value);
             }
         });
         this.setClientJsComponents();
     };
     Fingerprint.prototype.setTouchSupport = function (data) {
         var ts = {
-            maxTouchPoints: undefined,
-            touchEvent: undefined,
-            touchStart: undefined
+            maxTouchPoints: '',
+            touchEvent: '',
+            touchStart: ''
         };
-        ts.maxTouchPoints = data.value[0];
-        ts.touchEvent = data.value[1];
-        ts.touchStart = data.value[2];
+        ts.maxTouchPoints = String(data.value[0]);
+        ts.touchEvent = String(data.value[1]);
+        ts.touchStart = String(data.value[2]);
         this.fp.touchSupport = ts;
     };
     Fingerprint.prototype.clientJsFingerprint = function () {
@@ -1253,17 +1257,17 @@ var Fingerprint = (function () {
         }
     };
     Fingerprint.prototype.setAvailableScreenResolutin = function (data) {
-        this.fp['availableScreenResolutionWidth'] = data.value[1];
-        this.fp['availableScreenResolutionHeight'] = data.value[0];
+        this.fp['availableScreenResolutionWidth'] = String(data.value[1]);
+        this.fp['availableScreenResolutionHeight'] = String(data.value[0]);
     };
     Fingerprint.prototype.setScreenResolution = function (data) {
-        this.fp['screenResolutionWidth'] = data.value[1];
-        this.fp['screenResolutionHeight'] = data.value[0];
+        this.fp['screenResolutionWidth'] = String(data.value[1]);
+        this.fp['screenResolutionHeight'] = String(data.value[0]);
     };
     Fingerprint.prototype.setCanvas = function (data) {
         var canvas = {
-            canvasWinding: undefined,
-            fingerprint: undefined
+            canvasWinding: '',
+            fingerprint: ''
         };
         data.value.forEach(function (canvasElement) {
             if (canvasElement.substring(0, canvasElement.indexOf(':')) === 'canvas fp') {
@@ -1278,7 +1282,7 @@ var Fingerprint = (function () {
     Fingerprint.prototype.setPlugins = function (data) {
         var plugins = [];
         data.value.forEach(function (element) {
-            plugins.push(element[0]);
+            plugins.push(String(element[0]));
         });
         this.fp['plugins'] = plugins;
     };
@@ -1305,10 +1309,10 @@ var Fingerprint = (function () {
         this.fp['osVersion'] = this.client.getOSVersion();
         this.fp['systemLanguage'] = this.client.getSystemLanguage();
         this.fp['getSoftwareVersion'] = this.client.getSoftwareVersion();
-        this.fp['silverlight'] = this.client.isSilverlight();
+        this.fp['silverlight'] = String(this.client.isSilverlight());
         this.fp['silverlightVersion'] = this.client.getSilverlightVersion();
         this.fp['mimeType'] = this.client.getMimeTypes();
-        this.fp['ismimeType'] = this.client.isMimeTypes();
+        this.fp['ismimeType'] = String(this.client.isMimeTypes());
         this.setMobileInformations();
         this.setBrowserInformation();
         this.setDeviceInformation();
@@ -1316,29 +1320,29 @@ var Fingerprint = (function () {
     };
     Fingerprint.prototype.setMobileInformations = function () {
         var mobile = {
-            isMobile: undefined,
-            isMobileSafari: undefined,
-            isMobileMajor: undefined,
-            isMobileAndroid: undefined,
-            isMobileOpera: undefined,
-            isMobileWindows: undefined,
-            isMobileBlackBerry: undefined,
-            isMobileIOS: undefined,
-            isIphone: undefined,
-            isIpad: undefined,
-            isIpod: undefined
+            isMobile: '',
+            isMobileSafari: '',
+            isMobileMajor: '',
+            isMobileAndroid: '',
+            isMobileOpera: '',
+            isMobileWindows: '',
+            isMobileBlackBerry: '',
+            isMobileIOS: '',
+            isIphone: '',
+            isIpad: '',
+            isIpod: ''
         };
-        mobile['isMobileSafari'] = this.client.isMobileSafari();
-        mobile['isMobile'] = this.client.isMobile();
-        mobile['isMobileMajor'] = this.client.isMobileMajor();
-        mobile['isMobileAndroid'] = this.client.isMobileAndroid();
-        mobile['isMobileOpera'] = this.client.isMobileOpera();
-        mobile['isMobileWindows'] = this.client.isMobileWindows();
-        mobile['isMobileBlackBerry'] = this.client.isMobileBlackBerry();
-        mobile['isMobileIOS'] = this.client.isMobileIOS();
-        mobile['isIphone'] = this.client.isIphone();
-        mobile['isIpad'] = this.client.isIpad();
-        mobile['isIpod'] = this.client.isIpod();
+        mobile['isMobileSafari'] = String(this.client.isMobileSafari());
+        mobile['isMobile'] = String(this.client.isMobile());
+        mobile['isMobileMajor'] = String(this.client.isMobileMajor());
+        mobile['isMobileAndroid'] = String(this.client.isMobileAndroid());
+        mobile['isMobileOpera'] = String(this.client.isMobileOpera());
+        mobile['isMobileWindows'] = String(this.client.isMobileWindows());
+        mobile['isMobileBlackBerry'] = String(this.client.isMobileBlackBerry());
+        mobile['isMobileIOS'] = String(this.client.isMobileIOS());
+        mobile['isIphone'] = String(this.client.isIphone());
+        mobile['isIpad'] = String(this.client.isIpad());
+        mobile['isIpod'] = String(this.client.isIpod());
         this.fp['mobile'] = mobile;
     };
     Fingerprint.prototype.setBrowserInformation = function () {
@@ -1353,10 +1357,10 @@ var Fingerprint = (function () {
         this.fp['deviceType'] = this.client.getDeviceType();
     };
     Fingerprint.prototype.setFlashAndJava = function () {
-        this.fp['java'] = this.client.isJava();
-        this.fp['javaVersion'] = this.client.getJavaVersion();
-        this.fp['flash'] = this.client.isFlash();
-        this.fp['flashVersion'] = this.client.getFlashVersion();
+        this.fp['java'] = String(this.client.isJava());
+        this.fp['javaVersion'] = String(this.client.getJavaVersion());
+        this.fp['flash'] = String(this.client.isFlash());
+        this.fp['flashVersion'] = String(this.client.getFlashVersion());
     };
     return Fingerprint;
 }());
